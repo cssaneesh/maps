@@ -4,7 +4,7 @@ author: "Saneesh"
 date: "12/20/2021"
 output: html_document
 ---
-Map and code recreated after R_Ladies_Bangalore_12_meetup.
+Map and code recreated after R_Ladies_Bangalore_12_meetup.  
 Thanks to R Ladies Bangalore.
 
 ```{r}
