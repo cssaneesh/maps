@@ -15,7 +15,8 @@ coords <-read.csv(url(data)) # use it locally
 library(tidyverse)
 library(viridis)
 karnataka_map <- ggplot(data=coords)+
-  geom_polygon(aes(x=long, y=lat, group=group), color= 'black', fill=NA)
+  geom_polygon(aes(x=long, y=lat, group=group), color= 'black', fill=NA)+
+  coord_fixed(0.8)
 karnataka_map
 ```
 
@@ -25,6 +26,7 @@ coords$Name <- as.character(coords$District) # changed district to name as a cha
 
 karnataka_map <- ggplot(data=coords)+
   geom_polygon(aes(x=long, y=lat, group=group, fill=Name), color='black')+
+  coord_fixed(0.8)+
   scale_fill_viridis(discrete = TRUE)
 karnataka_map
 ```
