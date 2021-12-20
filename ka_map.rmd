@@ -1,0 +1,26 @@
+---
+title: "ka_map"
+author: "Saneesh"
+date: "12/20/2021"
+output: html_document
+---
+```{r}
+library(tidyverse)
+library(viridis)
+coords <- read.csv('Karnataka_District_Coordinates.csv')
+karnataka_map <- ggplot(data=coords)+
+  geom_polygon(aes(x=long, y=lat, group=group), color= 'black', fill=NA)
+karnataka_map
+```
+
+```{r}
+coords <- read.csv('Karnataka_District_Coordinates.csv')
+coords$Name <- as.character(coords$District) # changed district to name as a character
+
+karnataka_map <- ggplot(data=coords)+
+  geom_polygon(aes(x=long, y=lat, group=group, fill=Name), color='black')+
+  scale_fill_viridis(discrete = TRUE)
+karnataka_map
+```
+
+
