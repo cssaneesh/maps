@@ -4,10 +4,16 @@ author: "Saneesh"
 date: "12/20/2021"
 output: html_document
 ---
+
+```{r}
+library(RCurl)
+data <- 'https://raw.githubusercontent.com/cssaneesh/maps/main/Karnataka_District_Coordinates.csv' # download csv file from git
+coords <-read.csv(url(data)) # use it locally
+```
+
 ```{r}
 library(tidyverse)
 library(viridis)
-coords <- read.csv('Karnataka_District_Coordinates.csv')
 karnataka_map <- ggplot(data=coords)+
   geom_polygon(aes(x=long, y=lat, group=group), color= 'black', fill=NA)
 karnataka_map
